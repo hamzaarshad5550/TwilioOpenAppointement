@@ -8,6 +8,7 @@ EXPOSE 443
 ENV ASPNETCORE_URLS=http://+:$PORT
 
 # Build stage
+
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["TwilioOpenAppointement/TwilioOpenAppointement.csproj", "TwilioOpenAppointement/"]
