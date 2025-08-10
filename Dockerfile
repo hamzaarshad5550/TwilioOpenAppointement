@@ -1,5 +1,5 @@
-# Use the .NET 7 ASP.NET Core runtime as the base
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+# Use the .NET 6 ASP.NET Core runtime as the base
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
@@ -9,7 +9,7 @@ ENV ASPNETCORE_URLS=http://+:$PORT
 
 # Build stage
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["TwilioOpenAppointement/TwilioOpenAppointement.csproj", "TwilioOpenAppointement/"]
 RUN dotnet restore "TwilioOpenAppointement/TwilioOpenAppointement.csproj"
